@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Itim', cursive;
+
+    overflow: hidden;
+}
+
+
+
+
+
+
+.panel {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    overflow: hidden;
+    }
+   
+
+    .div1 { grid-area: 1 / 1 / 8 / 2;  }
+    .div2 { grid-area: 1 / 7 / 8 / 8;  }
+    .div3 { grid-area: 1 / 2 / 2 / 7;  }
+    .div4 { grid-area: 2 / 2 / 3 / 7;  }
+    .div5 { grid-area: 3 / 2 / 4 / 7;  }
+    .div6 { grid-area: 4 / 2 / 5 / 7;  }
+    .div7 { grid-area: 5 / 2 / 6 / 7;  }
+    .div8 { grid-area: 6 / 2 / 7 / 7;  }
+    .div9 { grid-area: 7 / 2 / 8 / 7;  }
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .barra-lateral {
+        position: absolute;
+        left: 1%;
+        top: 5%;
+        width: 14%;
+        height: 80%;
+
+        background-color: #333399;
+        padding-top: 2px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        font-family: 'Itim', cursive;
+        transition: height 0.3s ease, opacity 0.3s ease;
+        transform: translate(-50% -50%);
+        
+    }
+  
+    .barra-superior {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0%;
+        padding-left:25%;
+        background-color: #1b1b50;
+        color: #f1f1f1;
+        
+    }
+    .barra-superior h2 {
+        font-size: 15px;  
+        padding-top: 0%;
+        margin: 0 0 0;
+        padding-right: 5%;
+        padding-left: -1%;
+    }
+  
+    .barra-superior button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+  
+    .barra-superior button:hover {
+        color: #ffcc00;
+    }
+  
+    .barra-lateral.minimizada {
+        height: 4%;
+        overflow: hidden;
+    }
+  
+    .barra-lateral.oculta {
+        opacity: 0;
+        pointer-events: none;
+    }
+  
+    .barra-lateral a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        font-size: 18px;
+        transition: background 0.3s;
+    }
+  
+    .barra-lateral a:hover {
+        background-color: #575757;
+    }
+7
