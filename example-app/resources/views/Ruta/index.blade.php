@@ -11,7 +11,7 @@
     
     <title>Portal</title>
    
-   hola
+   
   
 
 </head>
@@ -21,7 +21,7 @@
     
 
         <div class="cort2">
-            <a href="index.html" class="a2">Invoice Day</a>
+            <a href="index.php" class="a2">Invoice Day</a>
         </div>
 
         <div class="cort3">
