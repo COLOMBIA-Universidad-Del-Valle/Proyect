@@ -1,3 +1,4 @@
+@import url('colores.css');
 
     .parent {
     display: grid;
@@ -18,13 +19,13 @@
   
     }
     
-    .div1 { grid-area: 1 / 4 / 5 / 6; background-color: #39396d;  padding-top: 50%; color: #f1f1f1; padding-left: 5%; font-size: 20px;
+    .div1 { grid-area: 1 / 4 / 5 / 6; background-color: var(--color-primario);  padding-top: 50%; color: var(--color-secundario) ; padding-left: 5%; font-size: 20px;
        }
-    .div2 { grid-area: 1 / 1 / 2 / 4; color: #333399; background-color: rgb(255, 255, 255); }
+    .div2 { grid-area: 1 / 1 / 2 / 4; color: var(--color-primario); background-color: var(--color-secundario); }
     .div3 { grid-area: 5 / 1 / 6 / 4; }
     .div4 { grid-area: 2 / 1 / 5 / 4; }
     .div5 { grid-area: 5 / 4 / 6 / 6; 
-    background-color: #333399; color: #ffffff ; font-size: 20px; }
+    background-color: var(--color-primario); color: var(--color-secundario); font-size: 20px; }
 
     body {
       
@@ -37,8 +38,8 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #333399;
-        color: white;
+        background-color: var(--color-primario);
+        color: var(--color-secundario);
         border: none;
         width: 50px;
         height: 50px;
@@ -54,7 +55,7 @@
         position: fixed;
         bottom: 80px;
         right: 20px;
-        background: white;
+        background: var(--color-secundario);
         padding: 10px;
         border-radius: 10px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
@@ -66,12 +67,12 @@
         display: block;
         padding: 8px 10px;
         text-decoration: none;
-        color: #333399;
+        color: var(--color-primario);
         font-family: 'Itim', cursive;
     }
 
     .menu-flotante a:hover {
-        background-color: #f1f1f1;
+        background-color: var(--color-secundario);
     }
 
   
@@ -98,9 +99,15 @@
         font-size: 16px;
         font-family: 'Itim', cursive;
         margin-top: 2%;
-        background-color: #333399;
-        color: #ffff;
-        height: 1.2rem;
+        background-color: 
+        
+        
+        var(--color-primario)
+        
+        
+        ;
+        color: var(--color-secundario);
+        height: 3.2rem;
         width: 20.9rem;
         line-height: 2.5;
         border-radius: 10rem;
@@ -109,7 +116,7 @@
 
 
     .subrayado {
-        font-size: 20px; color:#333398 ;
+        font-size: 20px; color:var(--color-primario) ;
         position: relative;
         padding-bottom: 5px;
     }
@@ -121,7 +128,7 @@
         bottom: 0;
         width: 50%;
         height: 2px;
-        background-color: rgb(137, 130, 130);
+        background-color: var(--color-terciario);
         transform: translateX(-50%);}
 
 /* Version celular  */
@@ -145,4 +152,22 @@
             grid-row-gap: 0px;
           
         }
+      }
+
+      /*Boton interfaz*/
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
       }

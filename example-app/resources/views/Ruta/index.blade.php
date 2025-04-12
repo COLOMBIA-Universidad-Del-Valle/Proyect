@@ -21,15 +21,15 @@
     
 
         <div class="cort2">
-            <a href="index.php" class="a2">Invoice Day</a>
+            <a href="/" class="a2">Invoice Day</a>
         </div>
 
         <div class="cort3">
-           <a href="log.php" class="a1">Iniciar</a> 
+           <a href=" /log" class="a1">Iniciar</a> 
         </div>
 
         <div class="cort4">
-          <a href="register.php" class="a1">Registrar</a>  
+          <a href="/register" class="a1">Registrar</a>  
         </div>
 
   

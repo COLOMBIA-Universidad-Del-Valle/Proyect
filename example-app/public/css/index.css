@@ -1,3 +1,5 @@
+@import url('colores.css');
+
 body {
     margin: 0;
     padding: 0;
@@ -8,16 +10,16 @@ body {
     
     margin-top: 1%; 
     padding-top: 2%;
-    background-color: antiquewhite;
+    background-color: var(--color-secundario);
 }
 .div1 {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #333399;
+    background: var(--color-primario);
     font-size: 25px;
-    color: white;
+    color: var(--color-secundario);
     padding: 15px;
     text-align: center;
     z-index: 1000;
@@ -38,19 +40,19 @@ body {
  .a1{
     display: inline-block;
     padding: 10px 30px;
-    color: #333399;
-    border: 2px solid #ffffff;
+    color: var(--color-primario);
+    border: 2px solid var(--color-secundario);
     text-decoration: none;
     border-radius: 0.6rem;
     font-size: 16px;
     font-weight: bold;
-    background: #ffffffff;
+    background: var(--color-secundario);
     text-align: center;
     transition: all 0.3s;
  }  
  .a2{
     display: inline-block;
-    color: #ffffff;
+    color: var(--color-secundario);
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
@@ -59,8 +61,8 @@ body {
  }
 
     .a1:hover {
-        background: #ffffffff;
-        color: white;
+        background: var(--color-secundario);
+        color: var(--color-secundario);
 
     }
     .goku {
@@ -89,7 +91,7 @@ body {
     .p1 {    
         position: absolute;
         text-align: center;
-        color: #ffffffff;
+        color: var(--color-secundario);
         font-size: 50px;
         left: 10%;
         text-shadow: -2px -2px 0 #000000,  
@@ -115,7 +117,7 @@ body {
     .boton {
         width: 15px;
         height: 15px;
-        background: white;
+        background: var(--color-secundario);
         border: none;
         border-radius: 50%;
         cursor: pointer;
