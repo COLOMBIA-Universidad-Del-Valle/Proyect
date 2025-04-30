@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="{{asset('css/formt.css') }}">
+
     
+  
 <div class="barra-superior-1">
     <button class="menu-toggle">☰</button>
     <span>Invoice Day</span>
@@ -15,8 +17,8 @@
         <a href="#">Acerca de</a>
     </div>
 </div>
-
-
+<body style="margin-top: 10%;">
+</body> 
     <script>
 
 document.addEventListener("DOMContentLoaded", function() {

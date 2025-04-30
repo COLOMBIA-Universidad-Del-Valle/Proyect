@@ -21,33 +21,21 @@
     
 
         <div class="cort2">
-            <a href="/" class="a2">Invoice Day</a>
+            <a href="{{ url('') }}" class="a2">Invoice Day</a>
         </div>
 
         <div class="cort3">
-           <a href=" /log" class="a1">Iniciar</a> 
+           <a href="{{ url('log') }}" class="a1">Iniciar</a> 
         </div>
 
         <div class="cort4">
-          <a href="/register" class="a1">Registrar</a>  
+          <a href="{{ url('log#registro') }}" class="a1">Registrar</a>  
         </div>
 
   
     </div>
 
-    <div class="contenido">
-        <div class="goku">
-            <div class="carrusel" id="carrusel">
-                <img src="{{asset('img/engineer-4925136.jpg')}}" alt="imagen 1">
-                <img src="{{asset('img/engineer-4941341.jpg')}}" alt="imagen 2" >
-                <img src="{{asset('img/engineer-4941351.jpg')}}" alt="imagen 3">
-            </div>
-            <div class="botones" id="botones"></div>
-            <p class="p1">Facturacion en linea gratis</p>
-            <p class="p1" style="top: 20%;">Satisface a tus clientes con facturas rapidas y organizadas. </p>
-        </div>
-  
-    </div>
+   
    
    
 

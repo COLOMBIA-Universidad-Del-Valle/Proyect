@@ -6,6 +6,8 @@ use Illuminate\Routing\Router;
 
 Route::get('/', [HomeController::class, 'index']);
 
+route::get('/index', [HomeController::class, 'index']);
+
 Route::get('/log', [HomeController::class, 'log']);
 
 Route::get('/register', [HomeController::class, 'register']);

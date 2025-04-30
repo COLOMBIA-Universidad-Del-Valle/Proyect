@@ -62,7 +62,7 @@ body {
 
     .a1:hover {
         background: var(--color-secundario);
-        color: var(--color-secundario);
+        color: var(--color-primario-oscuro);
 
     }
     .goku {
