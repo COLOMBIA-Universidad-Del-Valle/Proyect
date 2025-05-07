@@ -11,6 +11,13 @@ class HomeController extends Controller
     
     return view('Ruta.index');    
     }
+
+    public function index2()
+    {   
+    
+    return view('Ruta.index2');    
+    }
+    
     
     public function log()
     {
