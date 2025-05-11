@@ -3,6 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use Illuminate\Routing\Router;
+use App\Http\Controllers\UsuarioController;
+
+Route::post('/registrar', [UsuarioController::class, 'registrar'])->name('registrar.usuario');
+
+
+
+
+Route::post('/recuperar-password', [UsuarioController::class, 'recuperarPassword'])->name('recuperar.password');
+
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -13,6 +22,8 @@ route::get('/index', [HomeController::class, 'index']);
 Route::get('/log', [HomeController::class, 'log']);
 
 Route::get('/register', [HomeController::class, 'register']);
+
+Route::get('/password_recovery', [HomeController::class, 'pas']);
 
 Route::get('/job', [HomeController::class, 'job']);
 

@@ -18,6 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+create database bd_invoice;
+use bd_invoice;
 -- Base de datos: `bd_invoice`
 --
 
@@ -144,19 +146,7 @@ CREATE TABLE `sessions` (
   `last_activity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Volcado de datos para la tabla `sessions`
---
 
-INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('1KvGRnnKawGW25TlbkjtU7uIz0qTd5kEcijGz7ei', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiSFF6clNiRlJ2cVVOR0NKeHI5UnRyVWtQUFd6UFBSQTV5WmduMjB4VCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1746036488),
-('K4fMjqaSMJl7ZFGtuQqTU3WeApM8SukHakYlwjlp', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiY3J3VW5CblFUdzl3b3BSMWxJYTNwWnhnUEEwRlVlTzZ1T3k5QWV4bSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDc6Imh0dHA6Ly9sb2NhbGhvc3QvbGFyYXZlbC9leGFtcGxlLWFwcC9wdWJsaWMvbG9nIjt9fQ==', 1746040374);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tb_clientes`
---
 
 CREATE TABLE `tb_clientes` (
   `id_cliente` int(11) NOT NULL,
@@ -170,17 +160,6 @@ CREATE TABLE `tb_clientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `tb_clientes`
---
-
-INSERT INTO `tb_clientes` (`id_cliente`, `nombre`, `apellido`, `telefono`, `nit`, `direccion`, `observaciones`, `correo`) VALUES
-(1, 'julian david', 'calambas chilo', '3011801966', 'nit-1241221425', 'por hay', '', 'buen cliente');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tb_cotizaciones`
---
 
 CREATE TABLE `tb_cotizaciones` (
   `id_cotizacion` int(11) NOT NULL,
@@ -193,12 +172,6 @@ CREATE TABLE `tb_cotizaciones` (
 -- Volcado de datos para la tabla `tb_cotizaciones`
 --
 
-INSERT INTO `tb_cotizaciones` (`id_cotizacion`, `id_cliente`, `fecha_cotizacion`, `estado`) VALUES
-(1, 1, '0000-00-00', 'Pendiente');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tb_detalle_cotizacion`
 --
 
@@ -357,183 +330,7 @@ ALTER TABLE `sessions`
 --
 -- Indices de la tabla `tb_clientes`
 --
-ALTER TABLE `tb_clientes`
-  ADD PRIMARY KEY (`id_cliente`);
 
---
--- Indices de la tabla `tb_cotizaciones`
---
-ALTER TABLE `tb_cotizaciones`
-  ADD PRIMARY KEY (`id_cotizacion`),
-  ADD UNIQUE KEY `id_cliente_2` (`id_cliente`),
-  ADD KEY `id_cliente` (`id_cliente`);
-
---
--- Indices de la tabla `tb_detalle_cotizacion`
---
-ALTER TABLE `tb_detalle_cotizacion`
-  ADD PRIMARY KEY (`id_detalle_cotizacion`),
-  ADD UNIQUE KEY `id_cotizacion` (`id_cotizacion`),
-  ADD UNIQUE KEY `id_producto` (`id_producto`);
-
---
--- Indices de la tabla `tb_detalle_factura`
---
-ALTER TABLE `tb_detalle_factura`
-  ADD PRIMARY KEY (`id_detalle_factura`),
-  ADD UNIQUE KEY `id_factura` (`id_factura`),
-  ADD UNIQUE KEY `id_producto` (`id_producto`);
-
---
--- Indices de la tabla `tb_facturas`
---
-ALTER TABLE `tb_facturas`
-  ADD PRIMARY KEY (`id_factura`),
-  ADD UNIQUE KEY `id_cliente` (`id_cliente`);
-
---
--- Indices de la tabla `tb_funciones`
---
-ALTER TABLE `tb_funciones`
-  ADD PRIMARY KEY (`id_funciones`),
-  ADD UNIQUE KEY `id_usuario` (`id_usuario`);
-
---
--- Indices de la tabla `tb_productos`
---
-ALTER TABLE `tb_productos`
-  ADD PRIMARY KEY (`id_producto`);
-
---
--- Indices de la tabla `tb_usuarios`
---
-ALTER TABLE `tb_usuarios`
-  ADD PRIMARY KEY (`id_usuario`),
-  ADD UNIQUE KEY `id_factura` (`id_factura`),
-  ADD UNIQUE KEY `id_cotizacion` (`id_cotizacion`),
-  ADD UNIQUE KEY `id_funciones` (`id_funciones`);
-
---
--- Indices de la tabla `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `jobs`
---
-ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `tb_clientes`
---
-ALTER TABLE `tb_clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `tb_cotizaciones`
---
-ALTER TABLE `tb_cotizaciones`
-  MODIFY `id_cotizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `tb_detalle_cotizacion`
---
-ALTER TABLE `tb_detalle_cotizacion`
-  MODIFY `id_detalle_cotizacion` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `tb_facturas`
---
-ALTER TABLE `tb_facturas`
-  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `tb_funciones`
---
-ALTER TABLE `tb_funciones`
-  MODIFY `id_funciones` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `tb_productos`
---
-ALTER TABLE `tb_productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `tb_usuarios`
---
-ALTER TABLE `tb_usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `tb_cotizaciones`
---
-ALTER TABLE `tb_cotizaciones`
-  ADD CONSTRAINT `tb_cotizaciones_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `tb_clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `tb_detalle_cotizacion`
---
-ALTER TABLE `tb_detalle_cotizacion`
-  ADD CONSTRAINT `tb_detalle_cotizacion_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `tb_productos` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_detalle_cotizacion_ibfk_2` FOREIGN KEY (`id_cotizacion`) REFERENCES `tb_cotizaciones` (`id_cotizacion`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `tb_detalle_factura`
---
-ALTER TABLE `tb_detalle_factura`
-  ADD CONSTRAINT `tb_detalle_factura_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `tb_productos` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_detalle_factura_ibfk_2` FOREIGN KEY (`id_factura`) REFERENCES `tb_facturas` (`id_factura`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `tb_facturas`
---
-ALTER TABLE `tb_facturas`
-  ADD CONSTRAINT `tb_facturas_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `tb_clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_facturas_ibfk_2` FOREIGN KEY (`id_factura`) REFERENCES `tb_usuarios` (`id_factura`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `tb_funciones`
---
-ALTER TABLE `tb_funciones`
-  ADD CONSTRAINT `tb_funciones_ibfk_1` FOREIGN KEY (`id_funciones`) REFERENCES `tb_usuarios` (`id_funciones`),
-  ADD CONSTRAINT `tb_funciones_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `tb_usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `tb_usuarios`
---
-ALTER TABLE `tb_usuarios`
-  ADD CONSTRAINT `tb_usuarios_ibfk_1` FOREIGN KEY (`id_cotizacion`) REFERENCES `tb_cotizaciones` (`id_cotizacion`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

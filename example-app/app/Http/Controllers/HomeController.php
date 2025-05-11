@@ -24,8 +24,12 @@ class HomeController extends Controller
     return view('Ruta.log.log');
     }
 
+    
     public function register(){
         return view('Ruta.log.register');
+    }
+    public function pas(){
+        return view('Ruta.log.pas');
     }
 
     public function job(){
