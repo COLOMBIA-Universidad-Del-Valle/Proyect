@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Clientes y Facturas</title>
 
-    <link rel="stylesheet" href="{{asset('css/funcion.css') }}">
+    <link rel="stylesheet" href="{{asset('css/job/class.css') }}">
     
 </head>
 <body>
-    <div class="container-fluid">
+
+<div class="div1">
+    
+     <header>
+                <x-formt>
+        
+                </x-formt>
+        </header>
+</div>
+       
+
+   <div class="div2">
+     <div class="container-fluid">
         <header class="bg-primary text-white text-center py-3">
             <h1>Gestión de Clientes y Facturas</h1>
         </header>
@@ -91,6 +103,8 @@
             </main>
         </div>
     </div>
+
+   </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

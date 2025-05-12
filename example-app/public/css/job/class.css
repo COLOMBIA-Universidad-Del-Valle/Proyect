@@ -1,0 +1,59 @@
+@import url('colores.css');
+
+* {
+   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100%;
+    
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+    display: grid;
+    grid-template-columns: 0.5fr 5fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+  }
+
+
+.div1 { grid-area: 1 / 1 / 2 / 2;  
+   height: 100vh;
+  
+ 
+  display: flex;
+  align-items: center;
+    
+
+}
+.div2 { grid-area: 1 / 2 / 2 / 3; 
+ 
+display: flex;
+ align-items: justify-content;
+ justify-content: safe;
+  background-color: var(--color-secundario);
+  height: 100vh;
+  padding: 20px;
+
+}
+
+@media screen and (max-width: 768px){
+
+   body {
+    width: 100%;
+    
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+  }
+}
