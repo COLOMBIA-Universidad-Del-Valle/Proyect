@@ -68,6 +68,12 @@ class UsuarioController extends Controller
         $usuario = Usuario::where('correo', $request->email_login)->first();
 
         if ($usuario && Hash::check($request->password_login, $usuario->contrasena)) {
+
+            session([
+    'usuario' => $usuario->nombre, 
+    'correo' => $usuario->correo
+]);
+
             
             return redirect()->route('vista.job')->with('success', 'Inicio de sesión exitoso.');
         } else {
@@ -77,9 +83,6 @@ class UsuarioController extends Controller
 
 
 
-
-
-
-
     }
+
 
