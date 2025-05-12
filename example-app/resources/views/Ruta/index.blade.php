@@ -22,7 +22,7 @@
                     </ul>
 
                     <ul class="nav-links" id="navLinks">
-                        <li><a href="#" class="action_btn"> Login </a></li>
+                        <li><a href="{{('/login')}}" class="action_btn"> Login </a></li>
                         <li><a href="#" class="action_btn"> Create a new account </a></li>
                     </ul>
 

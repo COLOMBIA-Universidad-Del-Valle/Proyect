@@ -34,3 +34,7 @@ Route::get('/client', [HomeController::class, 'client']);
 Route::get('/invoice', [HomeController::class, 'invoice']);
 
 Route::get('/config', [HomeController::class, 'config']);
+
+Route::get('/login', function () {
+    return view('ruta.log.log');
+})->name('login');
