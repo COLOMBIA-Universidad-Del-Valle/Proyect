@@ -6,7 +6,7 @@
     <title>Crear Factura</title>
     
     <link rel="stylesheet" href="{{asset('css/funcion.css') }}">
-
+s
 
 </head>
 <body style="overflow: scroll; margin-top: 0%;">
