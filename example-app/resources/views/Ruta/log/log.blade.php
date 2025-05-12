@@ -24,29 +24,31 @@
 
 <div class="container">
 <div class="form-box login" style="overflow-y: scroll;">
-      <form action="#">
-    <h1>Login</h1>
-    <p>We're waiting for you :)</p>
 
-    <div class="input-box">
-        <label for="email_login">Email</label>
-        <input type="email" id="email_login" name="email_login" placeholder="Email" required>
-        <i class='bx bxs-user'></i>
-    </div>
+      <form action="{{ route('login.usuario') }}" method="POST">
+        @csrf
+            <h1>Login</h1>
+            <p>We're waiting for you :)</p>
 
-    <div class="input-box">
-        <label for="password_login">Password</label>
-        <input type="password" id="password_login" name="password_login" placeholder="Password" required>
-        <i class='bx bxs-lock-alt'></i>
-    </div>
+                <div class="input-box">
+                    <label for="email_login">Email</label>
+                    <input type="email" id="email_login" name="email_login" placeholder="Email" required>
+                    <i class='bx bxs-user'></i>
+                </div>
 
-    <button type="submit" class="btn">Login</button>
+                <div class="input-box">
+                    <label for="password_login">Password</label>
+                    <input type="password" id="password_login" name="password_login" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
 
-    <div class="forgot-link">
-        <p></p>
-        <a href="{{ url('password_recovery') }}">Forgot your password?</a>
-    </div>
-</form>
+                <button type="submit" class="btn">Login</button>
+
+                <div class="forgot-link">
+                    <p></p>
+                    <a href="{{ url('password_recovery') }}">Forgot your password?</a>
+                </div>
+        </form>
 
     </div>
 

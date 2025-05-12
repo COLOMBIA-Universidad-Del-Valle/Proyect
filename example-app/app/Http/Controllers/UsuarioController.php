@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\VerificacionCorreo;
+use Illuminate\Support\Facades\Hash;
+
 
 
 class UsuarioController extends Controller
@@ -26,7 +28,7 @@ class UsuarioController extends Controller
     $usuario = new Usuario();
     $usuario->nombre = $request->input('full_name');
     $usuario->correo = $request->input('email');
-    $usuario->contrasena = bcrypt($request->input('password'));
+    $usuario->contrasena = Hash::make($request->input('password'));
    
     $usuario->telefono = '0000000000';
     $usuario->tipo_usuario = 'usuario';
@@ -39,22 +41,45 @@ class UsuarioController extends Controller
     return redirect()->back()->with('success', 'Usuario registrado correctamente.');
 }
 
-public function recuperarPassword(Request $request)
-{
-    $request->validate([
-        'email' => 'required|email'
-    ]);
+    public function recuperarPassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email'
+        ]);
 
-    $usuario = Usuario::where('correo', $request->email)->first();
+        $usuario = Usuario::where('correo', $request->email)->first();
 
-    if (!$usuario) {
-        return back()->with('error', 'El correo no está registrado.');
+        if (!$usuario) {
+            return back()->with('error', 'El correo no está registrado.');
+        }
+
+        Mail::to($usuario->correo)->send(new VerificacionCorreo($usuario));
+
+        return back()->with('success', 'Se ha enviado un correo de recuperación a tu dirección.');
     }
 
-    Mail::to($usuario->correo)->send(new VerificacionCorreo($usuario));
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email_login' => 'required|email',
+            'password_login' => 'required',
+        ]);
 
-    return back()->with('success', 'Se ha enviado un correo de recuperación a tu dirección.');
-}
-}
+        $usuario = Usuario::where('correo', $request->email_login)->first();
 
+        if ($usuario && Hash::check($request->password_login, $usuario->contrasena)) {
+            
+            return redirect()->route('vista.job')->with('success', 'Inicio de sesión exitoso.');
+        } else {
+            return redirect()->back()->withErrors(['email_login' => 'Credenciales incorrectas.'])->withInput();
+        }
+    }
+
+
+
+
+
+
+
+    }
 
