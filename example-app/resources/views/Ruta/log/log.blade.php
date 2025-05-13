@@ -26,7 +26,7 @@
 <div class="form-box login" style="overflow-y: scroll;">
       <form action="#">
     <h1>Login</h1>
-    <p>We're waiting for you :)</p>
+    <p>We're waiting for you :</p>
 
     <div class="input-box">
         <label for="email_login">Email</label>

@@ -26,24 +26,19 @@
                         <li><a href="#" class="action_btn"> Create a new account </a></li>
                     </ul>
 
-                <div class="menu-toggle" id="menuToggle"> &#9776;</div>
-            </nav>
+             <div class="menu-toggle" id="menuToggle">
+        <i class="fa fa-bars"></i>
+    </div>
+</nav>
 
-            <div class="dropdown_menu">
-
-               
-                   <li><a href="#" class="action_btn"> Login </a></li>
-                   <li><a href="#" class="action_btn"> Create a new account </a></li>
-              
-                   
-                   <li><a href="#" data-target="Services">Services</a></li>
-                   <li><a href="#" data-target="Update">Updates</a></li>
-                   <li><a href="#" data-target="Projects">Projects</a></li>
-                   <li><a href="#" data-target="Contact">Contact</a></li>
-
-               
-               
-            </div>
+<ul class="dropdown_menu" id="dropdownMenu">
+    <li><a href="#" data-target="Services">Services</a></li>
+    <li><a href="#" data-target="Update">Updates</a></li>
+    <li><a href="#" data-target="Projects">Projects</a></li>
+    <li><a href="#" data-target="Contact">Contact</a></li>
+    <li><a href="{{('/login')}}" class="action_btn">Login</a></li>
+    <li><a href="#" class="action_btn">Create a new account</a></li>
+</ul>
         </header>
 
         <div class="parent" id="Services" style="display: none;">
@@ -88,36 +83,38 @@
          
         </div>
 
-        <script>
-            const sections = document.querySelectorAll('.parent');
-            const links = document.querySelectorAll('[data-target]');
+<script>
+    const sections = document.querySelectorAll('.parent');
+    const links = document.querySelectorAll('[data-target]');
+    const menuToggle = document.getElementById('menuToggle');
+    const dropdownMenu = document.getElementById('dropdownMenu');
 
-           
-            const toggleBtn = document.querySelector('.toggle_btn');
-  const toggleBtnIcon = document.querySelector('.toggle_btn i');
-  const dropDownMenu = document.querySelector('.dropdown_menu');
+    // Mostrar/ocultar menú desplegable en móvil
+    menuToggle.onclick = function () {
+        dropdownMenu.classList.toggle('open');
+        // Cambia el ícono si quieres
+        const icon = menuToggle.querySelector('i');
+        icon.className = dropdownMenu.classList.contains('open') ? 'fa fa-times' : 'fa fa-bars';
+    };
 
-  toggleBtn.onclick = function () {
-    dropDownMenu.classList.toggle('open');
-    const isOpen = dropDownMenu.classList.contains('open');
+    // Ocultar menú desplegable al seleccionar una opción
+    dropdownMenu.querySelectorAll('a[data-target]').forEach(link => {
+        link.addEventListener('click', () => {
+            dropdownMenu.classList.remove('open');
+            menuToggle.querySelector('i').className = 'fa fa-bars';
+        });
+    });
 
-    toggleBtnIcon.className = isOpen
-      ? 'fa-solid fa-xmark'
-      : 'fa-solid fa-bars';
-  };
-
-
-
-
-            links.forEach(link => {
-            link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = link.getAttribute('data-target');
-        sections.forEach(section => {
-        section.style.display = (section.id === target) ? 'grid' : 'none';
-            });
+    // Mostrar secciones
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = link.getAttribute('data-target');
+            sections.forEach(section => {
+                section.style.display = (section.id === target) ? 'grid' : 'none';
             });
         });
+    });
 </script>
 
 </body>

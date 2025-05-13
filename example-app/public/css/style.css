@@ -60,44 +60,88 @@
     color: #00bcd4;
   }
   
-  .menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-  }
+  /* ...existing code... */
 
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 100;
+  flex-direction: column;
+  padding: 10px 0;
+  gap: 10px;
+}
+
+.dropdown_menu.open {
+  display: flex;
+}
+
+.dropdown_menu a,
+.dropdown_menu li {
+  display: block;
+  background: rgba(255,255,255,0.2);
+  margin: 0 10px;
+  border-radius: 6px;
+  padding: 12px 18px;
+  color: #222;
+  text-align: left;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown_menu a:hover,
+.dropdown_menu li:hover {
+  background: #00bcd4;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
   .dropdown_menu {
     display: none;
-    position: absolute;
-    right: 2rem;
-    top: 60px;
-    height: 0;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
+  .dropdown_menu.open {
+    display: flex;
+  }
+}
 
-  .dropdown_menu.open{
-    height: 240px;
+@media (min-width: 769px) {
+  .dropdown_menu,
+  .menu-toggle {
+    display: none !important;
   }
+  .nav-links {
+    display: flex;
+  }
+}
+/* ...existing code... */
 
   
   
-  .dropdown_menu li {
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
-  .dropdown_menu .action_btn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+  
+
+
 
   .parent {
     height: 100%;
