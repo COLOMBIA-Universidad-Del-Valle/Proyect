@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Clientes y Facturas</title>
 
-    <link rel="stylesheet" href="{{asset('css/job/class.css') }}">
+    <link rel="stylesheet" href="{{asset('css/job/job.css') }}">
     
 </head>
 <body>
 
-<div class="div1">
+
     
      <header>
                 <x-formt>
         
                 </x-formt>
         </header>
-</div>
+
        
 
    <div class="div2">
@@ -27,7 +27,7 @@
         </header>
 
         <div class="row mt-4">
-            <!-- Sidebar -->
+           
             <aside class="col-md-3">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action active">Clientes</a>
@@ -37,7 +37,7 @@
                 </div>
             </aside>
 
-            <!-- Main Content -->
+          
             <main class="col-md-9">
                 <div class="card">
                     <div class="card-header">
@@ -66,7 +66,7 @@
                                         <button class="btn btn-sm btn-danger">Eliminar</button>
                                     </td>
                                 </tr>
-                                <!-- Más filas de ejemplo -->
+                               
                             </tbody>
                         </table>
                     </div>
@@ -95,7 +95,7 @@
                                     <td>2023-10-01</td>
                                     <td>Pagada</td>
                                 </tr>
-                                <!-- Más filas de ejemplo -->
+                               
                             </tbody>
                         </table>
                     </div>

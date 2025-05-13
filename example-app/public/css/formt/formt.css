@@ -1,44 +1,62 @@
 @import url('../colores.css');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 .sidebar {
-    height: auto;
-    width:max-content; 
+    position: sticky;
+    top: 0;
+    width: 250px;
+    max-width: 90%;
     background-color: var(--color-primario);
     color: var(--color-secundario);
     border-radius: 20px;
     margin: 10px;
     padding: 20px;
-   
-    display: fixed;
+    height: fit-content;
     z-index: 10;
-
 }
 
+.sidebar p,
 .sidebar h2 {
     text-align: center;
     margin-bottom: 20px;
     color: var(--color-secundario);
 }
+
 .sidebar ul {
     list-style: none;
-  
     padding: 0;
 }
+
 .sidebar ul li {
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid var(--color-secundario);
 }
+
 .sidebar ul li a {
-    
     color: var(--color-secundario);
     text-decoration: none;
-    
 }
 
+/* 💡 Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        border-radius: 0;
+        position: relative;
+        top: auto;
+        margin: 0;
+        padding: 15px;
+    }
+
+    .sidebar ul li {
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
