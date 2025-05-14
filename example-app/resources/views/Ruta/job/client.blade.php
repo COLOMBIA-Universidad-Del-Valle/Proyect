@@ -19,7 +19,6 @@
     </div>
 </div>
 
-
     <div class="container mt-5">
         <h1 class="mb-4">Gestión de Clientes</h1>
         
