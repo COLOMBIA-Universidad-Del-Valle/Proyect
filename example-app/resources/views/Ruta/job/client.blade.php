@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes</title>
 
-    <link rel="stylesheet" href="{{asset('css/funcion.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('css/job/client.css') }}">
 </head>
 <body>
-
-    <x-formt>
-        
-    </x-formt>
+  <div class="navbar">
+    <h2>Menú</h2>
+    <div class="navbar-links">
+        <a href="{{('index')}}">Inicio</a>
+        <a href="{{('/login')}}">Login</a>
+        <a href="">Registro</a>
+        <a href="{{('password_recovery')}}">Recuperar Contraseña</a>
+        <a href="#">Salir</a>
+    </div>
+</div>
     <div class="container mt-5">
         <h1 class="mb-4">Gestión de Clientes</h1>
         
