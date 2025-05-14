@@ -38,3 +38,11 @@ Route::get('/config', [HomeController::class, 'config']);
 Route::get('/login', function () {
     return view('ruta.log.log');
 })->name('login');
+
+Route::get('/client', function () {
+    return view('ruta.job.client');
+})->name('client');
+
+Route::get('/index', function () {
+    return view('ruta.index');
+})->name('index');

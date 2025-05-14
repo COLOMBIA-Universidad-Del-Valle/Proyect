@@ -18,6 +18,7 @@
                         <li><a href="#" data-target="Update">Updates</a></li>
                         <li><a href="#" data-target="Projects">Projects</a></li>
                         <li><a href="#" data-target="Contact">Contact</a></li>
+                        <li><a href="{{('/client')}}" class="client">client</a></li>
 
                     </ul>
 
@@ -38,6 +39,7 @@
     <li><a href="#" data-target="Contact">Contact</a></li>
     <li><a href="{{('/login')}}" class="action_btn">Login</a></li>
     <li><a href="#" class="action_btn">Create a new account</a></li>
+    <li><a href="{{('/client')}}" data-target="Services">client</a></li>
 </ul>
         </header>
 
