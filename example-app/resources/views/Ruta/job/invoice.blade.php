@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Factura</title>
     
-    <link rel="stylesheet" href="{{asset('css/funcion.css') }}">
+    <link rel="stylesheet" href="{{asset('css/job/invoice.css') }}">
 s
 
 </head>

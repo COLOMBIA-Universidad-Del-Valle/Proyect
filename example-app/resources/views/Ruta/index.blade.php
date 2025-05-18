@@ -18,6 +18,7 @@
         <li><a href="#" data-target="Plans">Planes</a></li>
         <li><a href="#" data-target="Contact">Contacto</a></li>
         <li><a href="{{('/client')}}" class="client">client</a></li>
+        <li><a href="{{('/invoice')}}" class="invoice">invoice</a></li>
       </ul>
 
       <ul class="nav-links">
