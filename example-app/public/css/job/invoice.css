@@ -139,13 +139,65 @@ button,
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+    .container {
+        max-width: 98%;
+        padding: 16px;
+    }
+    .floating-menu {
+        width: 180px;
+        padding: 14px;
+    }
+}
+
 @media (max-width: 600px) {
+    body {
+        padding: 8px;
+    }
+    .container {
+        padding: 8px;
+        border-radius: 6px;
+    }
     form {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
-
     .table th,
     .table td {
         font-size: 0.85rem;
+        padding: 8px;
+    }
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+    }
+    .floating-menu {
+        position: static;
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        box-shadow: none;
+        top: auto;
+        left: auto;
+    }
+    .table {
+        font-size: 0.85rem;
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 2px;
+    }
+    .floating-menu {
+        padding: 6px;
+        font-size: 0.95rem;
+    }
+    .table th,
+    .table td {
+        font-size: 0.75rem;
+        padding: 5px;
     }
 }

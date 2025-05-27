@@ -6,6 +6,7 @@ use Illuminate\Routing\Router;
 use App\Http\Controllers\UsuarioController;
 
 
+
 Route::post('/registrar', [UsuarioController::class, 'registrar'])->name('registrar.usuario');
 
 
@@ -44,4 +45,3 @@ Route::get('/config', [HomeController::class, 'config']);
 Route::get('/job', [HomeController::class, 'job'])
      ->name('vista.job');
 
-Route::post('/log', [UsuarioController::class, 'login'])->name('login.usuario');
