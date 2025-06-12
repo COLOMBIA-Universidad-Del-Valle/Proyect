@@ -13,21 +13,31 @@ body {
 }
 
 .sidebar {
-    position: fixed;
-    top: 30px;
-    left: 10px;
-    width: 220px;
-    height: 90vh;
+    
+    width: max-content;
+    height: max-content;
+
     background-color: var(--color-primario);
     color: var(--color-secundario);
-    padding: 30px 20px;
-    border-radius: 30px 30px 30px 30px;
+
+    padding: 2rem 1rem;
+
+    border-radius: 10px;
+   
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+   
     overflow-y:hidden;
-    z-index: 1000;
+    order: 1;
+    
+    transition: all 0.4s ease;
 }
 
-.sliderbar_list {
+.sidebar:hover .sidebar__element {
+  grid-template-columns: 40px 1fr;
+}
+
+
+.siderbar_list {
     list-style: none;
     padding: 0;
 
@@ -37,18 +47,26 @@ body {
     gap: .5rem;
 }
 
-.sliderbar_element{
-    padding: .8rem 1.3rem;
-    border-radius: 3px;
+.sidebar_element{
 
+    padding: 0.8rem 1.3rem;
+    border-radius: 3px;
     display: grid;
     align-items: center;
-    grid-template-columns: 40px 1fr;
-
+    
     color: var(--color-secundario);
     fill: var(--color-secundario);
+    transition: grid-template-columns 0.4s;
+
 
 }
+
+
+
+
+
+
+
 .sliderbar_element li a label{
     color: var(--color-secundario);
 }

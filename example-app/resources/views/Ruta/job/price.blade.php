@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="{{ asset('css/job/price.css') }}" >
 </head>
 <body>
+  
+   
   <div class="contenedor">
     <h1 class="titulo">Generar Cotización</h1>
 
@@ -74,9 +76,11 @@
       </div>
     </form>
   </div>
-  <x-formt></x-formt>
 
-  <script>
+ <x-formt></x-formt>
+ 
+ <script>
+
     document.getElementById('addItem').addEventListener('click', function () {
       const table = document.getElementById('itemsTable').getElementsByTagName('tbody')[0];
       const rowCount = table.rows.length;

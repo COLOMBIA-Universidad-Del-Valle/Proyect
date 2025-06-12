@@ -15,13 +15,10 @@ return new class extends Migration
             $table->integer('id_usuario', true);
             $table->string('nombre', 299);
             $table->string('correo', 299);
-            $table->string('apellido', 299);
             $table->string('telefono', 13);
             $table->string('contrasena', 399);
             $table->string('tipo_usuario', 299);
-            $table->integer('id_factura')->unique('id_factura');
-            $table->integer('id_cotizacion')->unique('id_cotizacion');
-            $table->integer('id_funciones')->unique('id_funciones');
+            $table->integer('id_funciones');
         });
     }
 

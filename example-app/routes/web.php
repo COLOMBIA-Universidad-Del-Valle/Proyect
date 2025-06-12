@@ -8,6 +8,8 @@ use App\Http\Controllers\UsuarioController;
 
 Route::post('/registrar', [UsuarioController::class, 'registrar'])->name('registrar.usuario');
 
+route::get('/prueba', [HomeController::class, 'prueba']);
+
 
 
 

@@ -32,8 +32,7 @@ class UsuarioController extends Controller
    
     $usuario->telefono = '0000000000';
     $usuario->tipo_usuario = 'usuario';
-    $usuario->id_factura = 0;
-    $usuario->id_cotizacion = 0;
+  
     $usuario->id_funciones = 0;
 
     $usuario->save();

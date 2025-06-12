@@ -1,44 +1,53 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clientes</title>
+  <title>Clients</title>
+  <link rel="stylesheet" href="{{ asset('css/components/body.css') }}">
   <link rel="stylesheet" href="{{ asset('css/job/client.css') }}">
 </head>
 <body>
 
-  <div class="contenedor">
-    <h1 class="titulo">Gestión de Clientes</h1>
+  <div class="container"  style="background-color: yellowgreen;" >
+    <h1 class="title">Client Management</h1>
 
-    <form id="create-client-form" class="formulario">
-      <div class="campo">
-        <label for="client-name">Nombre del Cliente</label>
-        <input type="text" id="client-name" placeholder="Ingrese el nombre del cliente" required>
+    <form id="create-client-form" class="form">
+      <div class="field">
+        <label for="client-name">Client Name</label>
+        <input type="text" id="client-name" placeholder="Enter client name" required>
       </div>
-      <div class="campo">
-        <label for="client-email">Correo Electrónico</label>
-        <input type="email" id="client-email" placeholder="Ingrese el correo del cliente" required>
+      <div class="field">
+        <label for="client-email">Email Address</label>
+        <input type="email" id="client-email" placeholder="Enter client email" required>
       </div>
-      <button type="submit" class="btn crear">Crear Cliente</button>
+      <button type="submit" class="btn create">Create Client</button>
     </form>
 
-    <table class="tabla">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Nombre</th>
-          <th>Correo Electrónico</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody id="client-list">
-        <!-- Filas generadas dinámicamente -->
-      </tbody>
-    </table>
+   
   </div>
-  <x-formt></x-formt>
+  <div class="container" style="background-color: yellowgreen;">
+        <h1 class="title">Clients</h1>
 
+    <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="client-list">
+        
+        </tbody>
+      </table>
+  </div>
+
+ 
+
+ <x-formt ></x-formt>
+ 
   <script>
     document.getElementById('create-client-form').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -59,15 +68,14 @@
         emailCell.textContent = email;
 
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Eliminar';
-        deleteButton.className = 'btn eliminar';
+        deleteButton.textContent = 'Delete';
+        deleteButton.className = 'btn delete';
         deleteButton.onclick = function() {
           table.deleteRow(row.rowIndex - 1);
         };
 
         actionCell.appendChild(deleteButton);
 
-        // Limpiar formulario
         document.getElementById('client-name').value = '';
         document.getElementById('client-email').value = '';
       }

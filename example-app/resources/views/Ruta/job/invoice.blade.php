@@ -8,6 +8,7 @@
 </head>
 <body>
 
+ 
   <div class="contenedor">
     <h1 class="titulo">Crear Factura</h1>
 
@@ -74,8 +75,8 @@
       </div>
     </form>
   </div>
-
-    <x-formt></x-formt>
+  
+ <x-formt></x-formt>
 
   <script>
     function addItem() {

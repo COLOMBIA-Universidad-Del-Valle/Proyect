@@ -120,3 +120,8 @@ padding: 12px;
 .acciones {
   text-align: right;
 }
+@media (max-width: 438px) {
+   .contenedor{
+    margin-top: 20vw;
+  }
+}

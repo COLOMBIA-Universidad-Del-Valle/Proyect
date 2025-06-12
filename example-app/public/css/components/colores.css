@@ -1,0 +1,27 @@
+:root {
+    --color-primario: #333399;
+    --color-secundario: #ffffff;
+    --color-terciario: #888484;
+    --color-text-alt: #6b7280;
+
+
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+
+    --fondo3: url("http://localhost/laravel/example-app/public/img/engineer-4925136.jpg");
+    --fondo1: url("http://localhost/laravel/example-app/public/img/engineer-4941341.jpg");
+    --fondo2: url("http://localhost/laravel/example-app/public/img/engineer-492411351.jpg");
+    --fondo: url("http://localhost/laravel/example-app/public/img/3274764.jpg");    
+
+
+    --color-bg: #ffffff;
+    --color-text: #374151; /* neutral dark gray */
+  /* neutral gray */
+    --color-primary: #111827; /* very dark gray for headings */
+    --color-btn-bg: #111827;
+    --color-btn-text: #ffffff;
+    --color-btn-bg-hover: #1f2937;
+    --border-radius: 0.75rem ;
+    --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
+
+}

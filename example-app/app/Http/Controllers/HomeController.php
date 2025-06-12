@@ -51,4 +51,10 @@ class HomeController extends Controller
     public function config(){
         return view( 'Ruta.log.config');
     }
+
+    public function prueba()
+    {
+        return view('Ruta.job.prueba');
+    
+}
 }

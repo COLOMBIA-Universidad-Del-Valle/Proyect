@@ -1,21 +1,46 @@
-<link rel="stylesheet" href="{{ asset('css/formt/formt.css') }}">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  
+<link rel="stylesheet" href="{{ asset('css/components/formt.css') }}">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-<div class="sidebar">
+<div class="sidebar" id="miDiv">
   <h2>Invoice Day</h2>
   <p>{{ session('usuario') }}</p>
   <p>{{ session('correo') }}</p>
 
-  <ul class="sidebar_element">
+  <ul class="sidebar_list">
 
-    <li class="siderbar_hide"><a class="sidebar_text" href="{{ url('job') }}"><i class='bx bx-briefcase'></i> <h3 > Work Table</h3></a></li>
-    <li class="siderbar_hide"><a class="sidebar_text" href="{{ url('client') }}"><i class='bx bx-user-plus'></i> <h3 > Customers</h3></a></li>
-    <li class="siderbar_hide"><a class="sidebar_text" href="{{ url('invoice') }}"><i class='bx bx-file'></i> <h3 > Invoice</h3></a></li>
-    <li class="siderbar_hide"><a class="sidebar_text" href="{{ url('price') }}"><i class='bx bx-clipboard'></i> <h3 > Price</h3></a></li>
-    <li class="siderbar_hide"><a class="sidebar_text" href="#" id="openModal"><i class='bx bx-cog'></i> <h3 > Configuration</h3></a></li>
-    <li class="siderbar_hide"><a class="sidebar_text" href="{{ url('index') }}"><i class='bx bx-reply'></i> <h3 > Exit</h3></a></li>
+    <li class="sidebar_element">
+      <a class="sidebar_text" href="{{ url('job') }}">
+        <i class='bx bx-briefcase'></i>
+        <h3> Work Table</h3>
+      </a>
+    </li>
+    <li class="sidebar_element">
+      <a class="sidebar_text" href="{{ url('client') }}">
+        <i class='bx bx-user-plus'></i>
+        <h3> Customers</h3>
+      </a></li>
+    <li class="sidebar_element">
+      <a class="sidebar_text" href="{{ url('invoice') }}">
+        <i class='bx bx-file'></i>
+        <h3> Invoice</h3>
+      </a></li>
+    <li class="sidebar_element">
+      <a class="sidebar_text" href="{{ url('price') }}">
+        <i class='bx bx-clipboard'></i>
+        <h3> Price</h3>
+      </a></li>
+    <li class="sidebar_element">
+      <a class="sidebar_text" href="#" id="openModal">
+        <i class='bx bx-cog'></i>
+        <h3> Configuration</h3>
+      </a></li>
+    <li class="sidebar_element">
+      <a class="sidebar_text" href="{{ url('index') }}">
+        <i class='bx bx-reply'></i>
+        <h3> Exit</h3>
+      </a></li>
 
- </ul>
+  </ul>
 </div>
 
 

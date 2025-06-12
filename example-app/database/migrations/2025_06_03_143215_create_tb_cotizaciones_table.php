@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tb_cotizaciones', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('usuario')->index('usuario');
+            $table->integer('id_cotizacion')->primary();
+            $table->integer('cliente');
+            $table->date('fecha_cotizacion');
+            $table->enum('estado', ['Pendiente', 'Aceptada', 'Rechazada', '']);
         });
     }
 
