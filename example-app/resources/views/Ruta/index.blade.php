@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invoice Day - Facturación Electrónica</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
- <link rel="stylesheet" href="{{ asset('css/index/index.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/index/index.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
   <header>
@@ -41,6 +42,32 @@
     </div>
     
   </header>
+  <div class="swiper-container mySlider">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="{{ asset('img/1.jpeg') }}" alt="Imagen 1">
+    </div>
+    <div class="swiper-slide">
+      <img src="{{ asset('img/2.jpeg') }}" alt="Imagen 2">
+    </div>
+    <div class="swiper-slide">
+      <img src="{{ asset('img/3.jpeg') }}" alt="Imagen 3">
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Paginación -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Barra azul transparente -->
+  <div class="swiper-bottom-bar">
+    
+  </div>
+</div>
+
 
   <div class="parent" id="Services">
     <div class="div1">
@@ -150,5 +177,26 @@
       document.getElementById('Services').style.display = 'block';
     });
   </script>
+  <!-- Deslizador -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const mySwiper = new Swiper('.mySlider', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
 </body>
 </html>
