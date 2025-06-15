@@ -1,4 +1,4 @@
-@import url('colores.css');
+@import url('../components/colores.css');
 
 * {
    margin: 0;

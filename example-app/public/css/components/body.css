@@ -26,12 +26,34 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
 
   overflow: hidden;
-  padding: 3rem 1rem;
+
 
   margin: 0;
   display: flex; 
-  gap: 20px;
+  
+  height: 100%;
+  width: 100%;
+
+
+}
+
+.container0 {
+  display: flex;
+  flex: 1;
+
+}
+@media (max-width: 1200px) {
+  .container0{
+    display: block;
+    order: 0;
+  }
+}
+@media (max-width: 490px) {
+
+  body{
+    display: block;
+    margin-top: 30rem;
+  }
 }

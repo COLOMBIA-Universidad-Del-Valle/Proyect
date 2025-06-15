@@ -11,33 +11,33 @@
     <li class="sidebar_element">
       <a class="sidebar_text" href="{{ url('job') }}">
         <i class='bx bx-briefcase'></i>
-        <h3> Work Table</h3>
+        <h4> Work Table</h4>
       </a>
     </li>
     <li class="sidebar_element">
       <a class="sidebar_text" href="{{ url('client') }}">
-        <i class='bx bx-user-plus'></i>
-        <h3> Customers</h3>
+       
+        <h4>  <i class='bx bx-user-plus'></i> Customers</h4>
       </a></li>
     <li class="sidebar_element">
       <a class="sidebar_text" href="{{ url('invoice') }}">
         <i class='bx bx-file'></i>
-        <h3> Invoice</h3>
+        <h4> Invoice</h4>
       </a></li>
     <li class="sidebar_element">
       <a class="sidebar_text" href="{{ url('price') }}">
         <i class='bx bx-clipboard'></i>
-        <h3> Price</h3>
+        <h4> Price</h4>
       </a></li>
     <li class="sidebar_element">
       <a class="sidebar_text" href="#" id="openModal">
         <i class='bx bx-cog'></i>
-        <h3> Configuration</h3>
+        <h4> Configuration</h4>
       </a></li>
     <li class="sidebar_element">
       <a class="sidebar_text" href="{{ url('index') }}">
         <i class='bx bx-reply'></i>
-        <h3> Exit</h3>
+        <h4> Exit</h4>
       </a></li>
 
   </ul>

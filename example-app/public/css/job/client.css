@@ -1,16 +1,19 @@
-@import url('../components/colores.css');
+@import url('../css/components/colores.css');
 
 .container {
-  max-width: max-content;
-  width: max-content;
+  
   background: var(--color-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
   padding: 2.5rem 3rem;
+
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto; 
+  min-width: 200px;
+  
 
-  order: 2;
+  
   
   gap: 2rem;
 }
@@ -134,54 +137,8 @@ input[type="email"]:focus {
   outline: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  body {
-    padding: 2rem 1rem;
-  }
-
-  .container {
-    padding: 1.5rem 1.5rem;
-  }
-
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .btn {
-    width: 100%;
-    padding: 0.75rem 0;
-    font-size: 1rem;
-  }
-
-  .form {
-    gap: 1rem;
-  }
-
-  .table thead {
-    display: none; /* Hide table headers on small screens */
-  }
-
-  .table tbody tr {
+@media (max-width: 1200px) {
+  .container{
     display: block;
-    margin-bottom: 1rem;
-  }
-
-  .table tbody td {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid #e5e7eb;
-  }
-
-  .table tbody td:last-child {
-    border-bottom: none;
-  }
-
-  .table tbody td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: var(--color-primary);
   }
 }
-

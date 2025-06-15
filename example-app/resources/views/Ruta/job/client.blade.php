@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clients</title>
   <link rel="stylesheet" href="{{ asset('css/components/body.css') }}">
   <link rel="stylesheet" href="{{ asset('css/job/client.css') }}">
 </head>
-<body>
 
-  <div class="container"  style="background-color: yellowgreen;" >
+<body>
+  <x-formt></x-formt>
+  <div class="container" style="background-color: yellowgreen;">
     <h1 class="title">Client Management</h1>
 
     <form id="create-client-form" class="form">
@@ -24,30 +26,31 @@
       <button type="submit" class="btn create">Create Client</button>
     </form>
 
-   
+
   </div>
-  <div class="container" style="background-color: yellowgreen;">
-        <h1 class="title">Clients</h1>
+
+  <div class="container" style="background-color:brown;">
+    <h1 class="title">Clients</h1>
 
     <table class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email Address</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="client-list">
-        
-        </tbody>
-      </table>
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Name</th>
+          <th>Email Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="client-list">
+
+      </tbody>
+    </table>
   </div>
 
- 
 
- <x-formt ></x-formt>
- 
+
+
+
   <script>
     document.getElementById('create-client-form').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -83,4 +86,5 @@
   </script>
 
 </body>
+
 </html>

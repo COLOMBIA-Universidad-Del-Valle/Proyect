@@ -1,83 +1,83 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Generar Cotización</title>
-  <link rel="stylesheet" href="{{ asset('css/job/price.css') }}" >
+  <link rel="stylesheet" href="{{ asset('css/job/client.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/components/body.css') }}">
 </head>
 <body>
-  
-   
-  <div class="contenedor">
-    <h1 class="titulo">Generar Cotización</h1>
+  <x-formt></x-formt>
+  <div class="container" style="overflow: scroll;">
+  <h1 class="title">Generar Cotización</h1>
 
-    <form id="cotizacionForm" class="formulario">
-      <div class="fila">
-        <div class="campo">
-          <label for="nombre">Nombre de la Cotización</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Ej: Cotización Servicio Mantenimiento" />
-        </div>
-        <div class="campo">
-          <label for="cliente">Cliente</label>
-          <input type="text" id="cliente" name="cliente" required placeholder="Nombre del cliente" />
-        </div>
-      </div>
-      <div class="fila">
-        <div class="campo">
-          <label for="logo">Logo (opcional)</label>
-          <input type="file" id="logo" name="logo" accept="image/*" />
-          <small>Formatos aceptados: JPG, PNG (Max. 2MB)</small>
-        </div>
-        <div class="campo">
-          <label for="correo">Correo Electrónico</label>
-          <input type="email" id="correo" name="correo" required placeholder="correo@cliente.com" />
-        </div>
-        <div class="campo">
-          <label for="telefono">Teléfono de Contacto</label>
-          <input type="tel" id="telefono" name="telefono" required />
-        </div>
-      </div>
+  <form id="cotizacionForm" class="form">
+    <div class="field">
+      <label for="nombre">Nombre de la Cotización</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Ej: Cotización Servicio Mantenimiento" />
+    </div>
 
-      <div class="fila">
-        <div class="campo">
-          <h2>Items de la Cotización</h2>
-          <table id="itemsTable" class="tabla">
-            <thead>
-              <tr>
-                <th><label for="descripcion">Descripción</label> </th>
-                <th><label for="cantidad">Cantidad</label>  </th>
-                <th> <label for="precio">Precio Unitario</label> </th>
-                <th>  Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                
-                <input type="text" id="descripcion" name="descripcion" required placeholder="Descripción del producto/servicio" /></td>
-                
-                <td>
-              
-                <input type="number" name="cantidad" id="cantidad" min="1" value="1" required /></td>
-                <td><input type="number" id="precio" name="precio" step="0.01" min="0" required placeholder="0.00" /></td>
-                <td><button type="button" class="btn eliminar">Eliminar</button></td>
-              </tr>
-            </tbody>
-          </table>
-          <button type="button" class="btn agregar" id="addItem">Agregar Item</button>
-        </div>
-      </div>
+    <div class="field">
+      <label for="cliente">Cliente</label>
+      <input type="text" id="cliente" name="cliente" required placeholder="Nombre del cliente" />
+    </div>
 
-      <div class="fila">
-        <div class="campo">
-          <button type="submit" class="btn guardar">Generar Cotización PDF</button>
-        </div>
-      </div>
-    </form>
-  </div>
+    <div class="field">
+      <label for="logo">Logo (opcional)</label>
+      <input type="file" id="logo" name="logo" accept="image/*" />
+      <small>Formatos aceptados: JPG, PNG (Max. 2MB)</small>
+    </div>
 
- <x-formt></x-formt>
+    <div class="field">
+      <label for="correo">Correo Electrónico</label>
+      <input type="email" id="correo" name="correo" required placeholder="correo@cliente.com" />
+    </div>
+
+    <div class="field">
+      <label for="telefono">Teléfono de Contacto</label>
+      <input type="tel" id="telefono" name="telefono" required />
+    </div>
+
+    <div class="field">
+      <h2>Items de la Cotización</h2>
+      <table id="itemsTable" class="table">
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Descripción">
+              <input type="text" id="descripcion" name="descripcion" required placeholder="Descripción del producto/servicio" />
+            </td>
+            <td data-label="Cantidad">
+              <input type="number" name="cantidad" id="cantidad" min="1" value="1" required />
+            </td>
+            <td data-label="Precio Unitario">
+              <input type="number" id="precio" name="precio" step="0.01" min="0" required placeholder="0.00" />
+            </td>
+            <td data-label="Acciones">
+              <button type="button" class="btn delete">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn" id="addItem">Agregar Item</button>
+    </div>
+
+    <div class="field">
+      <button type="submit" class="btn">Generar Cotización PDF</button>
+    </div>
+  </form>
+</div>
+
+
+ 
  
  <script>
 
