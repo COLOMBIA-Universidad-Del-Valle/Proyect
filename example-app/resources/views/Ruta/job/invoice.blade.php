@@ -1,109 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Factura</title>
-    
-    <link rel="stylesheet" href="{{asset('css/funcion.css') }}">
-s
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crear Factura</title>
+  <link rel="stylesheet" href="{{ asset('css/job/invoice.css') }}">
 </head>
-<body style="overflow: scroll; margin-top: 0%;">
+<body>
 
+  <div class="contenedor">
+    <h1 class="titulo">Crear Factura</h1>
 
-
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-12 text-center mb-4">
-                <h1>Crear Factura</h1>
-            </div>
+    <form id="invoice-form" class="formulario">
+      <div class="fila">
+        <div class="campo">
+          <label for="seller">Vendedor</label>
+          <input type="text" id="seller" placeholder="Nombre del vendedor">
         </div>
-        <div class="row mb-4">
-            <div class="col-6">
-                <label for="seller" class="form-label">Vendedor</label>
-                <input type="text" id="seller" class="form-control" placeholder="Nombre del vendedor">
-            </div>
-            <div class="col-6">
-                <label for="date" class="form-label">Fecha</label>
-                <input type="date" id="date" class="form-control">
-            </div>
+        <div class="campo">
+          <label for="date">Fecha</label>
+          <input type="date" id="date">
         </div>
-        <div class="row mb-4">
-            <div class="col-6">
-                <label for="purchaseOrder" class="form-label">Orden de Compra</label>
-                <input type="text" id="purchaseOrder" class="form-control" placeholder="Número de orden de compra">
-            </div>
-            <div class="col-6">
-                <label for="logo" class="form-label">Logo</label>
-                <input type="file" id="logo" class="form-control">
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col-6">
-                <label for="billingAddress" class="form-label">Dirección de Facturación</label>
-                <textarea id="billingAddress" class="form-control" rows="3" placeholder="Dirección de facturación"></textarea>
-            </div>
-            <div class="col-6">
-                <label for="shippingAddress" class="form-label">Dirección de Envío</label>
-                <textarea id="shippingAddress" class="form-control" rows="3" placeholder="Dirección de envío"></textarea>
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col-12">
-                <h4>Items</h4>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Descripción</th>
-                            <th>Cantidad</th>
-                            <th>Precio Unitario</th>
-                            <th>Total</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="itemsTable">
-                        <tr>
-                            <td><input type="text" class="form-control" placeholder="Descripción"></td>
-                            <td><input type="number" class="form-control" placeholder="Cantidad"></td>
-                            <td><input type="number" class="form-control" placeholder="Precio Unitario"></td>
-                            <td><input type="number" class="form-control" placeholder="Total" readonly></td>
-                            <td><button class="btn btn-danger btn-sm" onclick="removeItem(this)">Eliminar</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button class="btn btn-primary" onclick="addItem()">Agregar Item</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-end">
-                <button class="btn btn-success">Guardar Factura</button>
-            </div>
-        </div>
-    </div>
-    
-<x-formt>
+      </div>
 
-</x-formt>
+      <div class="fila">
+        <div class="campo">
+          <label for="purchaseOrder">Orden de Compra</label>
+          <input type="text" id="purchaseOrder" placeholder="Número de orden de compra">
+        </div>
+        <div class="campo">
+          <label for="logo">Logo</label>
+          <input type="file" id="logo">
+        </div>
+      </div>
 
+      <div class="fila">
+        <div class="campo">
+          <label for="billingAddress">Dirección de Facturación</label>
+          <textarea id="billingAddress" rows="3" placeholder="Dirección de facturación"></textarea>
+        </div>
+        <div class="campo">
+          <label for="shippingAddress">Dirección de Envío</label>
+          <textarea id="shippingAddress" rows="3" placeholder="Dirección de envío"></textarea>
+        </div>
+      </div>
 
-    <script>
-        function addItem() {
-            const table = document.getElementById('itemsTable');
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td><input type="text" class="form-control" placeholder="Descripción"></td>
-                <td><input type="number" class="form-control" placeholder="Cantidad"></td>
-                <td><input type="number" class="form-control" placeholder="Precio Unitario"></td>
-                <td><input type="number" class="form-control" placeholder="Total" readonly></td>
-                <td><button class="btn btn-danger btn-sm" onclick="removeItem(this)">Eliminar</button></td>
-            `;
-            table.appendChild(row);
-        }
+      <h4>Items</h4>
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Total</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="itemsTable">
+          <tr>
+            <td><input type="text" placeholder="Descripción"></td>
+            <td><input type="number" placeholder="Cantidad"></td>
+            <td><input type="number" placeholder="Precio Unitario"></td>
+            <td><input type="number" placeholder="Total" readonly></td>
+            <td><button type="button" class="btn eliminar" onclick="removeItem(this)">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <button type="button" class="btn agregar" onclick="addItem()">Agregar Item</button>
 
-        function removeItem(button) {
-            button.closest('tr').remove();
-        }
-    </script>
+      <div class="acciones">
+        <button type="submit" class="btn guardar">Guardar Factura</button>
+      </div>
+    </form>
+  </div>
+
+    <x-formt></x-formt>
+
+  <script>
+    function addItem() {
+      const table = document.getElementById('itemsTable');
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td><input type="text" placeholder="Descripción"></td>
+        <td><input type="number" placeholder="Cantidad"></td>
+        <td><input type="number" placeholder="Precio Unitario"></td>
+        <td><input type="number" placeholder="Total" readonly></td>
+        <td><button type="button" class="btn eliminar" onclick="removeItem(this)">Eliminar</button></td>
+      `;
+      table.appendChild(row);
+    }
+
+    function removeItem(button) {
+      button.closest('tr').remove();
+    }
+  </script>
+
 </body>
 </html>

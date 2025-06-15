@@ -1,50 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Clientes y Facturas</title>
-
-    <link rel="stylesheet" href="{{asset('css/job/job.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('css/job/job.css') }}">
 </head>
 <body>
 
-
-    
-     <header>
-                <x-formt>
-        
-                </x-formt>
-        </header>
-
-       
-
-   <div class="div2">
-     <div class="container-fluid">
-        <header class="bg-primary text-white text-center py-3">
+    <div class="contenedor">
+        <header class="encabezado">
             <h1>Gestión de Clientes y Facturas</h1>
         </header>
 
-        <div class="row mt-4">
-           
-            <aside class="col-md-3">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active">Clientes</a>
-                    <a href="#" class="list-group-item list-group-item-action">Facturas</a>
-                    <a href="#" class="list-group-item list-group-item-action">Reportes</a>
-                    <a href="#" class="list-group-item list-group-item-action">Configuración</a>
-                </div>
-            </aside>
-
-          
-            <main class="col-md-9">
+        <main class="contenido-principal">
+            <section class="seccion-card">
                 <div class="card">
                     <div class="card-header">
                         <h2>Clientes Destacados</h2>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped">
+                        <table class="tabla">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -61,23 +37,24 @@
                                     <td>juan.perez@example.com</td>
                                     <td>+123456789</td>
                                     <td>
-                                        <button class="btn btn-sm btn-info">Ver</button>
-                                        <button class="btn btn-sm btn-warning">Editar</button>
-                                        <button class="btn btn-sm btn-danger">Eliminar</button>
+                                        <button class="btn ver">Ver</button>
+                                        <button class="btn editar">Editar</button>
+                                        <button class="btn eliminar">Eliminar</button>
                                     </td>
                                 </tr>
-                               
                             </tbody>
                         </table>
                     </div>
                 </div>
+            </section>
 
-                <div class="card mt-4">
+            <section class="seccion-card">
+                <div class="card">
                     <div class="card-header">
                         <h2>Facturas Recientes</h2>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped">
+                        <table class="tabla">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -95,17 +72,13 @@
                                     <td>2023-10-01</td>
                                     <td>Pagada</td>
                                 </tr>
-                               
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </main>
-        </div>
+            </section>
+        </main>
     </div>
-
-   </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<x-formt></x-formt>
 </body>
 </html>

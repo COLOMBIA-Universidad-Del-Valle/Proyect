@@ -1,83 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
-
- <link rel="stylesheet" href="{{ asset('css/job/client.css') }}">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clientes</title>
+  <link rel="stylesheet" href="{{ asset('css/job/client.css') }}">
 </head>
 <body>
 
-    <x-formt>
-        
-    </x-formt>
-    <div class="container mt-5">
-        <h1 class="mb-4">Gestión de Clientes</h1>
-        
-        <!-- Formulario para crear cliente -->
-        <form id="create-client-form" class="mb-4">
-            <div class="mb-3">
-                <label for="client-name" class="form-label">Nombre del Cliente</label>
-                <input type="text" class="form-control" id="client-name" placeholder="Ingrese el nombre del cliente" required>
-            </div>
-            <div class="mb-3">
-                <label for="client-email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="client-email" placeholder="Ingrese el correo del cliente" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Crear Cliente</button>
-        </form>
+  <div class="contenedor">
+    <h1 class="titulo">Gestión de Clientes</h1>
 
-        <!-- Tabla para listar y eliminar clientes -->
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Correo Electrónico</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="client-list">
-                <!-- Aquí se agregarán dinámicamente los clientes -->
-            </tbody>
-        </table>
-    </div>
+    <form id="create-client-form" class="formulario">
+      <div class="campo">
+        <label for="client-name">Nombre del Cliente</label>
+        <input type="text" id="client-name" placeholder="Ingrese el nombre del cliente" required>
+      </div>
+      <div class="campo">
+        <label for="client-email">Correo Electrónico</label>
+        <input type="email" id="client-email" placeholder="Ingrese el correo del cliente" required>
+      </div>
+      <button type="submit" class="btn crear">Crear Cliente</button>
+    </form>
 
-    <script>
-        document.getElementById('create-client-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Correo Electrónico</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="client-list">
+        <!-- Filas generadas dinámicamente -->
+      </tbody>
+    </table>
+  </div>
+  <x-formt></x-formt>
 
-            const name = document.getElementById('client-name').value;
-            const email = document.getElementById('client-email').value;
+  <script>
+    document.getElementById('create-client-form').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-            if (name && email) {
-                const table = document.getElementById('client-list');
-                const row = table.insertRow();
-                const idCell = row.insertCell(0);
-                const nameCell = row.insertCell(1);
-                const emailCell = row.insertCell(2);
-                const actionCell = row.insertCell(3);
+      const name = document.getElementById('client-name').value;
+      const email = document.getElementById('client-email').value;
 
-                idCell.textContent = table.rows.length;
-                nameCell.textContent = name;
-                emailCell.textContent = email;
+      if (name && email) {
+        const table = document.getElementById('client-list');
+        const row = table.insertRow();
+        const idCell = row.insertCell(0);
+        const nameCell = row.insertCell(1);
+        const emailCell = row.insertCell(2);
+        const actionCell = row.insertCell(3);
 
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Eliminar';
-                deleteButton.className = 'btn btn-danger btn-sm';
-                deleteButton.onclick = function() {
-                    table.deleteRow(row.rowIndex - 1);
-                };
+        idCell.textContent = table.rows.length;
+        nameCell.textContent = name;
+        emailCell.textContent = email;
 
-                actionCell.appendChild(deleteButton);
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Eliminar';
+        deleteButton.className = 'btn eliminar';
+        deleteButton.onclick = function() {
+          table.deleteRow(row.rowIndex - 1);
+        };
 
-                // Limpiar formulario
-                document.getElementById('client-name').value = '';
-                document.getElementById('client-email').value = '';
-            }
-        });
-    </script>
+        actionCell.appendChild(deleteButton);
+
+        // Limpiar formulario
+        document.getElementById('client-name').value = '';
+        document.getElementById('client-email').value = '';
+      }
+    });
+  </script>
+
 </body>
 </html>

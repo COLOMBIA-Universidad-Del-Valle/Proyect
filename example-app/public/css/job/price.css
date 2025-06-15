@@ -26,54 +26,60 @@ body {
   color: var(--color-primario);
 }
 
-.formulario {
-  margin-bottom: 30px;
+.formulario .fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-.campo {
-  margin-bottom: 15px;
+.formulario .campo {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.campo label {
+.formulario label {
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-.campo input {
+.formulario input,
+.formulario textarea {
   padding: 10px;
   border: 1px solid var(--color-terciario);
   border-radius: 4px;
 }
 
-.btn {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  color: var(--color-secundario);
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.btn.crear {
-  background-color: var(--color-primario);
-}
-
-.btn.eliminar {
-  background-color: #dc3545;
-}
 
 .tabla {
+ 
+  table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.tabla th,
-.tabla td {
-  padding: 12px;
-  border: 1px solid var(--color-secundario);
+
+.tabla th{overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+   border: 1px solid var(--color-secundario);
+
   text-align: left;
+padding: 12px;
+}
+.tabla td {
+  
+  border: 1px solid var(--color-secundario);
+ 
+  text-align: left;
+}
+.tabla td input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--color-terciario);
+    
 }
 
 .tabla th {
@@ -86,5 +92,31 @@ body {
 }
 
 .tabla tr:hover {
-  background-color: var(--color-secundario);
+  background-color:var(--color-secundario);
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  color: var(--color-secundario);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn.agregar {
+  background-color: var(--color-primario);
+  margin-bottom: 20px;
+}
+
+.btn.eliminar {
+  background-color: #dc3545;
+}
+
+.btn.guardar {
+  background-color: var(--color-primario);
+}
+
+.acciones {
+  text-align: right;
 }
