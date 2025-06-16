@@ -11,11 +11,93 @@
   flex-direction: column;
   flex: 1 1 auto; 
   min-width: 200px;
+
+    max-width: 100%; 
+  overflow-x: hidden; 
   
 
   
   
   gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    display: block;
+    padding: 2rem; 
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+    border-radius: 0; 
+  }
+
+  .title {
+    font-size: 2.2rem; 
+    text-align: center; 
+  }
+
+  .form {
+    gap: 1rem; 
+  }
+
+  .btn {
+    width: 100%; 
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    align-self: center; 
+  }
+
+  .table {
+    display: block; 
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+ 
+
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .table tbody td {
+    display: block;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+@media (max-width: 490px) {
+  .container {
+    
+    border-radius: 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
 }
 
 .title {

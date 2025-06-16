@@ -12,13 +12,10 @@ class Usuario extends Model
 
     protected $fillable = [
         'nombre',
-        'correo',  
+        'correo',
         'telefono',
         'contrasena',
         'tipo_usuario',
-        'id_factura',
-        'id_cotizacion',
-        'id_funciones'
+        'id_funciones',
     ];
 }
-

@@ -58,30 +58,26 @@ class UsuarioController extends Controller
     }
 
     public function login(Request $request)
-    {
-        $request->validate([
-            'email_login' => 'required|email',
-            'password_login' => 'required',
-        ]);
+{
+    $request->validate([
+        'email_login' => 'required|email',
+        'password_login' => 'required',
+    ]);
 
-        $usuario = Usuario::where('correo', $request->email_login)->first();
+    $usuario = Usuario::where('correo', $request->email_login)->first();
 
-        if ($usuario && Hash::check($request->password_login, $usuario->contrasena)) {
+    if ($usuario && Hash::check($request->password_login, $usuario->contrasena)) {
 
-            session([
-    'usuario' => $usuario->nombre, 
-    'correo' => $usuario->correo
-]);
+       session()->put('id_usuario', $usuario->id_usuario);
+session()->put('usuario', $usuario->nombre);
+session()->put('correo', $usuario->correo);
 
-            
-            return redirect()->route('vista.job')->with('success', 'Inicio de sesión exitoso.');
-        } else {
-            return redirect()->back()->withErrors(['email_login' => 'Credenciales incorrectas.'])->withInput();
-        }
+        return redirect()->route('vista.job')->with('success', 'Inicio de sesión exitoso.');
+    } else {
+        return redirect()->back()->withErrors(['email_login' => 'Credenciales incorrectas.'])->withInput();
     }
+}
+  
 
 
-
-    }
-
-
+}

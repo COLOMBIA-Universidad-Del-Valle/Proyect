@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="{{ asset('css/job/client.css') }}">
 </head>
 
-<body style="background-color: aqua;">
+<body >
     <x-formt ></x-formt>
 
-    <div class="container0" style="background-color: blue;  flex: 1;">
-        <div class="container" style="background-color: yellowgreen;">
+    <div class="container0" >
+        <div class="container" >
             <h1 class="title">Clientes Destacados</h1>
 
             <table class="table">
@@ -35,7 +35,7 @@
 
         </div>
 
-        <div class="container" style="background-color: tomato;">
+        <div class="container" >
             <h1 class="title">Facturas Recientes</h1>
 
 

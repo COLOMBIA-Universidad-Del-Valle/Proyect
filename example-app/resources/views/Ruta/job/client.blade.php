@@ -11,7 +11,7 @@
 
 <body>
   <x-formt></x-formt>
-  <div class="container" style="background-color: yellowgreen;">
+  <div class="container" >
     <h1 class="title">Client Management</h1>
 
     <form id="create-client-form" class="form">
@@ -29,7 +29,7 @@
 
   </div>
 
-  <div class="container" style="background-color:brown;">
+  <div class="container">
     <h1 class="title">Clients</h1>
 
     <table class="table">

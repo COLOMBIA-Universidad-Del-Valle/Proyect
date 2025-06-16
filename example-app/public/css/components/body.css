@@ -54,6 +54,8 @@ body {
 
   body{
     display: block;
-    margin-top: 30rem;
+    overflow: scroll;
+   
   }
+
 }

@@ -5,6 +5,14 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Routing\Router;
 use App\Http\Controllers\UsuarioController;
 
+use App\Http\Controllers\CotizacionController;
+
+use App\Http\Controllers\ClienteController;
+
+
+
+Route::get('/price', [CotizacionController::class, 'create']);
+Route::post('/price', [CotizacionController::class, 'store']);
 
 Route::post('/registrar', [UsuarioController::class, 'registrar'])->name('registrar.usuario');
 
@@ -33,7 +41,6 @@ Route::get('/password_recovery', [HomeController::class, 'pas']);
 
 Route::get('/job', [HomeController::class, 'job']);
 
-Route::get('/price', [HomeController::class, 'price']);
 
 Route::get('/client', [HomeController::class, 'client']);
 

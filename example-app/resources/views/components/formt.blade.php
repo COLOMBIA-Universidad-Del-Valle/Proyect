@@ -3,6 +3,9 @@
 
 <div class="sidebar" id="miDiv">
   <h2>Invoice Day</h2>
+  <button id="toggleSidebar" class="hamburger">
+  ☰
+</button>
   <p>{{ session('usuario') }}</p>
   <p>{{ session('correo') }}</p>
 

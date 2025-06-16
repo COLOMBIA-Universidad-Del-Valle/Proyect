@@ -19,31 +19,50 @@
   .sidebar{ order: 1;}
    
   }
-  @media (max-width: 490px) {
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+
+@media (max-width: 490px) {
+
+  .hamburger {
+    display: block;
+  }
 
   .sidebar {
-    width: 100%;
-    max-width: none;
-    border-radius: 0; 
+    width:  100%;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    top: 0; /* o bottom: 0 para que sea barra inferior */
-    left: 0;
-    right: 0;
-    z-index: 1000;
+    padding: 0.5rem 50%;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    border-radius:0px 0px 15px 15px;
   }
 
   .sidebar_list {
-    flex-direction: row; 
-    width: 100%;
-    justify-content: space-around;
+    display: none; 
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    background: var(--color-primario);
+    flex-direction: column;
+    padding: 2rem;
   }
 
+  .sidebar_list.show {
+    display: flex; /* mostrar cuando se activa */
+  }
 
+  .sidebar_element {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
 }
-
 
 
 

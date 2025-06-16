@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_facturas', function (Blueprint $table) {
-            $table->integer('id_factura');
-            $table->integer('id_cliente');
-            $table->integer('fecha_factura');
-            $table->decimal('total', 10);
+        Schema::create('clientes', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_facturas');
+        Schema::dropIfExists('clientes');
     }
 };
